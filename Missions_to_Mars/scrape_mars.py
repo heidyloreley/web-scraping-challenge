@@ -81,8 +81,6 @@ def scrape():
     html_table = df.to_html()
     html_table.replace('\n', '')
 
-    #Save HTML table string to file
-    df.to_html('Mars_table.html')
 
 # 5. MARS HEMISPHERES
     browser = init_browser()
@@ -113,8 +111,8 @@ def scrape():
         html2 = browser.html
         soup2 = BeautifulSoup(html2, 'html.parser')
 
-        img_url = soup2.find("div",class_="content").a["href"]
-        title = soup2.title.text
+        img_url = soup2.find("div",class_="downloads").a["href"]
+        title = soup2.find("h2",class_="title").text
 
         mars_dict={"title": title,"img_url": img_url}
         hemisphere_image_urls.append(mars_dict)
