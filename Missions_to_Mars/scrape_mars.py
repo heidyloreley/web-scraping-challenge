@@ -11,7 +11,6 @@ def init_browser():
 
 #Create function to run that will execute all scraping code and return one Python dictionary containing all of the scraped data.
 def scrape():
-    mars_data = {}  # Dictionary to save all scraped information
     
 # 1. MARS NEWS SITE
     
@@ -126,7 +125,17 @@ def scrape():
     #Close Browser
     browser.quit()
 
-    return mars_data
+        
+    # Dictionary to save all scraped information
+    mars_dict = {"NewsTitle": news_title,
+                "NewsDescription":news_p,
+                "ImageURL":featured_image_url,
+                "Weather":mars_weather,
+                "Facts":html_table,
+                "Hemispheres":hemisphere_image_urls
+                }  
+
+    return mars_dict
 
 
 
