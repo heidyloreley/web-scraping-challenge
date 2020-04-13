@@ -22,54 +22,42 @@
         </div>
     </div>
 
-        <!-- PRESENT HEADERS OF INFORMATION: NEWS, WEATHER AND FACTS -->
-    <div class="container">
-        <div class="row row-cols-3">
-            <div class="col">
-                <h3 class="display-4 text-center">Latest Mars News</h3>
-            </div>
-            <div class="col">
-                <h3 class="display-4 text-center">Weather on Mars</h3>
-            </div>
-            <div class="col">
-                <h3 class="display-4 text-center">Mars Facts</h3>
-            </div>
-        </div>
-    </div>
-
         <!-- PRESENT SET OF INFORMATION: NEWS, WEATHER AND FACTS -->
-    <div class="container">
-        <div class="row row-cols-3">
-    <!-- COLUMN TO PRESENT MARS NEWS -->
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ data.NewsTitle }}</h5>
-                        <p class="card-text">{{ data.NewsDescription }}</p>
+        <div class="container">
+            <div class="row row-cols">
+        <!-- COLUMN TO PRESENT MARS NEWS -->
+                <div class="col">
+                <h3 class="display-4 text-center">Latest Mars News</h3>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ data.NewsTitle }}</h5>
+                            <p class="card-text">{{ data.NewsDescription }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-    <!-- COLUMN TO PRESENT MARS WEATHER -->
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <p class="card-text">{{ data.Weather }}</p>
+    
+        <!-- COLUMN TO PRESENT MARS WEATHER -->
+                <div class="col">
+                <h3 class="display-4 text-center"> Weather on Mars</h3>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <p class="card-text">{{ data.Weather }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-    <!-- COLUMN TO PRESENT TABLE OF MARS FACTS --> 
-    <!-- How can I include this formating <thead class="thead-dark"> -->         
-            <div class="col">
-                <div class="table-responsive">
-                    <table class="table table-hover table-sm">
-                        {{ data.Facts | safe}}
-                    </table>
+    
+        <!-- COLUMN TO PRESENT TABLE OF MARS FACTS --> 
+        <!-- How can I include this formating <thead class="thead-dark"> -->         
+                <div class="col">
+                <h3 class="display-4 text-center">Mars Facts</h3>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-sm">
+                            {{ data.Facts | safe}}
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
     <!-- CONTAINER TO PRESENT MARS FEATURE IMAGE INFORMATION -->
