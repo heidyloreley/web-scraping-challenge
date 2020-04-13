@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <title>MARS WEB SITE</title>
+</head>
+<body>
+    <!-- JUMBOTRON AS HEADER OF PAGE -->
+    <div class = "container">
+        <div class="jumbotron text-center">
+          <h1 class="display-4">Mission to Mars</h1>
+          <p class="lead">This page compiles the most relevant informaction about Mars,  
+            from its basic description facts and relevant images, up to its current weather.</p>
+          <hr class="my-4">
+          <p> </p>
+          <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a>
+        </div>
+    </div>
+
+        <!-- PRESENT HEADERS OF INFORMATION: NEWS, WEATHER AND FACTS -->
+    <div class="container">
+        <div class="row row-cols-3">
+            <div class="col">
+                <h3 class="display-4 text-center">Latest Mars News</h3>
+            </div>
+            <div class="col">
+                <h3 class="display-4 text-center">Weather on Mars</h3>
+            </div>
+            <div class="col">
+                <h3 class="display-4 text-center">Mars Facts</h3>
+            </div>
+        </div>
+    </div>
+
+        <!-- PRESENT SET OF INFORMATION: NEWS, WEATHER AND FACTS -->
+    <div class="container">
+        <div class="row row-cols-3">
+    <!-- COLUMN TO PRESENT MARS NEWS -->
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ data.NewsTitle }}</h5>
+                        <p class="card-text">{{ data.NewsDescription }}</p>
+                    </div>
+                </div>
+            </div>
+
+    <!-- COLUMN TO PRESENT MARS WEATHER -->
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <p class="card-text">{{ data.Weather }}</p>
+                    </div>
+                </div>
+            </div>
+
+    <!-- COLUMN TO PRESENT TABLE OF MARS FACTS --> 
+    <!-- How can I include this formating <thead class="thead-dark"> -->         
+            <div class="col">
+                <div class="table-responsive">
+                    <table class="table table-hover table-sm">
+                        {{ data.Facts | safe}}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- CONTAINER TO PRESENT MARS FEATURE IMAGE INFORMATION -->
+    <div class = "container text-center">
+        <h1 class="display-4">Mars Feature Image</h1>
+        <img src="{{data.ImageURL}}" class="img-fluid rounded" alt="Mars Feature Image">
+    </div>
+    <!-- GRID CARDS TO PRESENT MARS HEMIPHERES INFORMATION -->
+    <div class = "container">
+        <h1 class="display-4 text-center">Mars Hemispheres</h1>
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col mb-4">
+              <div class="card">
+                <img src="{{ data.Hemispheres[0].img_url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-center">{{ data.Hemispheres[0].title }}</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card">
+                <img src="{{ data.Hemispheres[1].img_url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-center">{{ data.Hemispheres[1].title }}</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card">
+                <img src="{{ data.Hemispheres[2].img_url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-center">{{ data.Hemispheres[2].title }}</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card">
+                <img src="{{ data.Hemispheres[3].img_url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-center">{{ data.Hemispheres[3].title }}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
