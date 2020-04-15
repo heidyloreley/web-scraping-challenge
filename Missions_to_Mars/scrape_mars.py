@@ -114,8 +114,8 @@ def scrape():
         img_url = soup2.find("div",class_="downloads").a["href"]
         title = soup2.find("h2",class_="title").text
 
-        images_dict={"title": title,"img_url": img_url}
-        hemisphere_image_urls.append(images_dict)
+        mars_dict={"title": title,"img_url": img_url}
+        hemisphere_image_urls.append(mars_dict)
 
         # Go back to the original page
         browser.back()

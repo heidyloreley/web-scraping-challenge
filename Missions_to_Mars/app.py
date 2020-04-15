@@ -11,7 +11,7 @@ app = Flask(__name__)
 mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 
 # Drops collection if available to remove duplicates
-mongo.db.mars.drop()
+#mongo.db.mars.drop()
 
 #Run Scrape function, scrape()
 # Mars_Data = scrape_mars.scrape()
