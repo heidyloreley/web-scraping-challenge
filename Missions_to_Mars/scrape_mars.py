@@ -32,7 +32,7 @@ def scrape():
     url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(url)
     browser.find_by_id('full_image').first.click()
-    browser.find_link_by_partial_text('more info').first.click()
+    browser.links.find_by_partial_text('more info').first.click()
     html = browser.html
 
     # Create BeautifulSoup object
@@ -114,8 +114,8 @@ def scrape():
         img_url = soup2.find("div",class_="downloads").a["href"]
         title = soup2.find("h2",class_="title").text
 
-        mars_dict={"title": title,"img_url": img_url}
-        hemisphere_image_urls.append(mars_dict)
+        images_dict={"title": title,"img_url": img_url}
+        hemisphere_image_urls.append(images_dict)
 
         # Go back to the original page
         browser.back()
